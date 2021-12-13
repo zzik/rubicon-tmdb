@@ -1,10 +1,7 @@
 import React, { ReactElement } from 'react'
 
-interface Props {
-  
-}
 
-function SearchBox({}: Props): ReactElement {
+function SearchBox(): ReactElement {
   return (
     <div>
       <span>Search</span>

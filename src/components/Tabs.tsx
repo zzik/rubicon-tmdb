@@ -1,14 +1,10 @@
 import React, { ReactElement } from 'react'
 
-interface Props {
-  
-}
-
-export default function Tabs({}: Props): ReactElement {
+export default function Tabs(): ReactElement {
   return (
     <div>
-      <a className="movies-tab">Movies</a>
-      <a className="tvshows-tab">TV Shows</a>
+      <h3 className="movies-tab">Movies</h3>
+      <h3 className="tvshows-tab">TV Shows</h3>
     </div>
   )
 }

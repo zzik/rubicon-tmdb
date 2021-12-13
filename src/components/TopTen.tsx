@@ -1,8 +1,6 @@
 import React, { ReactElement } from 'react'
 
-import {TopTenProps} from '../interfaces'
-
-export default function TopTen(props: TopTenProps): ReactElement {
+export default function TopTen(): ReactElement {
   return (
     <div>
       <li>1</li>
