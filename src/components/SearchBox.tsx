@@ -7,7 +7,7 @@ interface Props {
 function SearchBox({}: Props): ReactElement {
   return (
     <div>
-      
+      <span>Search</span>
     </div>
   )
 }
