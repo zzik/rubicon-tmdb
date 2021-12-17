@@ -1,18 +1,23 @@
-import React, { ReactElement } from 'react'
+import { observer } from 'mobx-react'
+import React from 'react'
+import store from '../context/store'
+import TopTenShows from './TopTenShows'
+import TopTenMovies from './TopTenMovies'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-export default function TopTen(): ReactElement {
+
+
+
+const TopTen = observer(() => {
+  const queryClient = new QueryClient()
   return (
-    <div>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li>10</li>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className={store.activeTab}>
+        {/* {movies.isFetched && <li>{movies.data.results[0].title}</li>} */}
+        {store.activeTab === 'shows' && <TopTenShows />}
+        {store.activeTab === 'movies' && <TopTenMovies />}
+      </div>
+    </QueryClientProvider>
   )
-}
+})
+export default TopTen

@@ -4,7 +4,7 @@ import React, { ReactElement } from 'react'
 function SearchBox(): ReactElement {
   return (
     <div>
-      <span>Search</span>
+      <input type="text" placeholder="Search.." onChange={()=>{}} />
     </div>
   )
 }
