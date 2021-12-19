@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { Tabs, SearchBox, TopTen } from '../components'
+import { Tabs, SearchBox, Display } from '../components'
 
 function Homepage(): ReactElement {
 
@@ -8,7 +8,7 @@ function Homepage(): ReactElement {
     <div>
       <Tabs />
       <SearchBox />
-      <TopTen />
+      <Display />
     </div>
   )
 }

@@ -2,10 +2,11 @@ import { makeAutoObservable} from "mobx"
 
 class store {
   
-  activeTab = "shows"
+  activeTab = "tv"
 
-  topMovies = []
-  topShows = []
+  queryString = ''
+  
+  queryStatus = false
   
     constructor () {
         makeAutoObservable(this)
@@ -13,6 +14,14 @@ class store {
 
     setNewTab(choice: string) {
       this.activeTab = `${choice}`
+    }
+    
+    activateQueryStatus() {
+      this.queryStatus = true
+    }
+
+    changeQueryString(queryString: string) {
+      this.queryString = queryString
     }
 }
 

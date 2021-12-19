@@ -5,8 +5,8 @@ export default function Tabs(): ReactElement {
 
   return (
     <div>
-      <button onClick={() => {store.setNewTab('movies')}}>Movies</button>
-      <button onClick={() => {store.setNewTab('shows')}}>TV Shows</button>
+      <button onClick={() => {store.setNewTab('movie')}}>Movies</button>
+      <button onClick={() => {store.setNewTab('tv')}}>TV Shows</button>
     </div>
   )
 }

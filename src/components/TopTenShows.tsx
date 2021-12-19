@@ -1,6 +1,5 @@
 import { observer } from 'mobx-react'
 import React from 'react'
-import store from '../context/store'
 import useTopShows from '../hooks/useTopShows'
 
 
