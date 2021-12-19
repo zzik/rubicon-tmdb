@@ -10,8 +10,9 @@ const QueryShows = observer(() => {
 
   return (
     <ul>
+      {searchShows.isLoading && <li>Loading search...</li>}
       {searchShows.isSuccess ? <li>{searchShows.data.results[0].original_name}</li> : <h3>Show not found..</h3>}
     </ul>
   )
 })
-export default QueryShows
+export default QueryShows 
