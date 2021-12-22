@@ -1,22 +1,24 @@
-import React, { ReactElement } from 'react'
-import store from '../context/store'
+import React, { ReactElement } from "react";
+import store from "../context/store";
+import { observer } from 'mobx-react'
 
-function SearchBox(): ReactElement {
-
+const SearchBox = observer((): ReactElement => {
   const handleSearch = (event: any) => {
-    if (event.target.value.length > 3) {
-      setTimeout(() => {
-        store.changeQueryString(event.target.value)
-      }, 1000)
-    };
+    setTimeout(() => {
+      console.log(event.target.value)
+      store.changeQueryString(event.target.value)
+    }, 1000);
   };
 
   return (
     <div>
-      <input type="text" placeholder="Search.." onChange={handleSearch} />
+      <input
+        type="text"
+        placeholder="Search.."
+        onChange={(e) => handleSearch(e)}
+      />
     </div>
-  )
-}
+  );
+})
 
-export default SearchBox
- 
+export default SearchBox;

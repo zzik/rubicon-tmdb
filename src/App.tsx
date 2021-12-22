@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Homepage from './pages/Homepage'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import Details from "./pages/Details"
 
 
 
@@ -12,6 +13,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/details/:id" element={<Details />} />
       </Routes>
     </Router>
   </QueryClientProvider>

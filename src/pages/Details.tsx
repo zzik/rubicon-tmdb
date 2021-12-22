@@ -1,16 +1,12 @@
 import React, { ReactElement } from 'react'
-import { Tabs, SearchBox, Display } from '../components'
 
-function Homepage(): ReactElement {
-
+function Details(): ReactElement {
 
   return (
     <div>
-      <Tabs />
-      <SearchBox />
-      <Display />
+      <h1>Alea Iacta Est</h1>
     </div>
   )
 }
 
-export default Homepage
+export default Details

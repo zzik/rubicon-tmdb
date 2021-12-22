@@ -1,12 +1,15 @@
 export interface MovieProps {
+  id: number;
   title: string;
-  cover:{
-    image: string;
-    trailer?:string|null;
-  }
-  description: string;
+  backdrop_path?: string | null | undefined;
+  poster_path?: string  | null | undefined;
+  overview: string;
 }
-
-export interface TopTenProps {
-  
+export interface TvProps {
+  id: number;
+  original_name: string;
+  src: string;
+  backdrop_path?: string | null | undefined;
+  poster_path?: string  | null | undefined;
+  overview: string;
 }

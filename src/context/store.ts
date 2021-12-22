@@ -1,27 +1,45 @@
-import { makeAutoObservable} from "mobx"
+import { makeObservable, observable, action} from 'mobx'
 
 class store {
-  
-  activeTab = "tv"
-  queryString = ''
-  data = []
   apiKey = '516bd90eaa5d6fc72dd79e7ba1bfaa28'
+  activeTab: string = "tv"
+  queryString = ''
+  searchURL = ''
+  baseLink = 'https://image.tmdb.org/t/p/w300'
 
-    constructor () {
-        makeAutoObservable(this)
-    }
+  // remove elements until the constructor along with their related objects
 
-    setNewTab(choice: string) {
-      this.activeTab = `${choice}`
-    }
+  constructor() {
+    makeObservable(this, {
+      // observables
+      activeTab: observable,
+      queryString: observable,
+      baseLink: observable,
+      apiKey: observable,
+      searchURL: observable,
+      // actions
+      setNewTab: action,
+      changeQueryString: action,
+    })
+  }
 
-    changeQueryString(queryString: string) {
-      this.queryString = queryString
-    }
 
-    pushNewData(data: any) {
-      this.data.push = data
+
+  setNewTab(choice: string) {
+    this.activeTab = `${choice}`
+  }
+
+  changeQueryString(phrase: string) {
+    if (phrase.length >= 3) {
+      this.queryString = phrase
+      let param = "&query=" + phrase
+      this.searchURL = `https://api.themoviedb.org/3/search/${this.activeTab}?api_key=${this.apiKey}&language=en-US&page=1$${param}&include_adult=false`
     }
+    if (phrase.length<3){
+      this.searchURL = ''
+    }
+  }
+
 }
 
 export default new store()

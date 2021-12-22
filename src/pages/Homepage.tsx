@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { Tabs, SearchBox, Display } from '../components'
 
-function Homepage(): ReactElement {
+const Homepage = (): ReactElement => {
 
 
   return (
