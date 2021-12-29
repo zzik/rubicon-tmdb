@@ -8,6 +8,6 @@ const searchRequest = async () => {
     return res.data
 }
 
-const useSearch = () => useQuery('searchShows', searchRequest, {refetchInterval:1000}) 
+const useSearch = () => useQuery('searchShows', searchRequest, {refetchInterval:2000}) 
 
 export default useSearch
