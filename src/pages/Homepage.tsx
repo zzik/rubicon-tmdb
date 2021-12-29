@@ -1,16 +1,13 @@
+import { observer } from 'mobx-react'
 import React, { ReactElement } from 'react'
-import { Tabs, SearchBox, Display } from '../components'
+import { Display } from '../components'
 
-const Homepage = (): ReactElement => {
-
-
+const Homepage = observer((): ReactElement => {
   return (
-    <div>
-      <Tabs />
-      <SearchBox />
+    <div className="page">
       <Display />
     </div>
   )
-}
+})
 
 export default Homepage
